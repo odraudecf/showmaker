@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar no ShowMaker</title>
+  <meta name="description" content="Protótipo do ShowMaker, sistema de gestão para LabMakers.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400&family=Kalam:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/paper.css">
+  <link rel="stylesheet" href="css/screens.css">
+</head>
+<body class="pagina-login">
+
+  <main class="login">
+    <div class="caderno" aria-hidden="true">
+      <div class="caderno__elastico"></div>
+    </div>
+
+    <section class="ficha ficha-login" aria-labelledby="titulo-login">
+      <div class="ficha-login__marca">
+        <img src="assets/logo.svg" alt="" width="40" height="40">
+        <div>
+          <h1 id="titulo-login">ShowMaker</h1>
+          <p class="suave">Agenda, estoque e demandas do seu LabMaker num lugar só.</p>
+        </div>
+      </div>
+
+      <form id="form-login" novalidate>
+        <div class="erro-login" id="erro-login" role="alert" hidden>
+          Preencha o e-mail e a senha para entrar.
+        </div>
+        <label class="campo" id="campo-email">
+          <span>E-mail</span>
+          <input type="email" name="email" autocomplete="username" placeholder="voce@labmaker.org" value="ana.ribeiro@labmaker.org">
+        </label>
+        <label class="campo" id="campo-senha">
+          <span>Senha</span>
+          <input type="password" name="senha" autocomplete="current-password">
+        </label>
+        <div class="ficha-login__linha">
+          <label class="marcar"><input type="checkbox" checked> Manter conectado</label>
+          <button type="button" class="link" id="esqueci">Esqueci a senha</button>
+        </div>
+        <button class="btn btn--tinta ficha-login__entrar" type="submit">Entrar</button>
+      </form>
+
+      <p class="pequeno suave ficha-login__nota">Protótipo: digite qualquer senha para entrar. Deixe a senha em branco para ver a mensagem de erro.</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById("form-login");
+      var erro = document.getElementById("erro-login");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var vazio = !form.email.value.trim() || !form.senha.value;
+        erro.classList.remove("erro-login--info");
+        erro.textContent = "Preencha o e-mail e a senha para entrar.";
+        erro.hidden = !vazio;
+        document.getElementById("campo-email").classList.toggle("campo--erro", !form.email.value.trim());
+        document.getElementById("campo-senha").classList.toggle("campo--erro", !form.senha.value);
+        if (vazio) {
+          (form.email.value.trim() ? form.senha : form.email).focus();
+          return;
+        }
+        window.location.href = "app.html";
+      });
+
+      document.getElementById("esqueci").addEventListener("click", function () {
+        erro.hidden = false;
+        erro.classList.add("erro-login--info");
+        erro.textContent = "Enviamos um link para criar uma nova senha no seu e-mail.";
+      });
+    })();
+  </script>
+</body>
+</html>

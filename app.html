@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShowMaker</title>
+  <meta name="description" content="Protótipo do ShowMaker, sistema de gestão para LabMakers.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400&family=Kalam:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/paper.css">
+  <link rel="stylesheet" href="css/screens.css">
+</head>
+<body data-perfil="gestor">
+
+  <header class="topo">
+    <a class="marca" href="app.html">
+      <img src="assets/logo.svg" alt="" width="36" height="36">
+      <span class="marca__nome">ShowMaker</span>
+    </a>
+    <label>
+      <span class="sr-only">Laboratório</span>
+      <select class="topo__lab">
+        <option>LabMaker Ifes Alegre</option>
+        <option>LabMaker Escola Estadual de Guaçuí</option>
+      </select>
+    </label>
+
+    <div class="topo__direita">
+      <div class="ver-como">
+        <span id="ver-como-rotulo">Ver como</span>
+        <div class="ver-como__opcoes" role="group" aria-labelledby="ver-como-rotulo">
+          <button data-ver-como="aluno" aria-pressed="false">Aluno</button>
+          <button data-ver-como="professor" aria-pressed="false">Professor</button>
+          <button data-ver-como="gestor" aria-pressed="true">Gestor</button>
+        </div>
+      </div>
+      <button class="avatar" data-abrir="perfil" aria-label="Abrir meu perfil (Ana Ribeiro)" title="Ana Ribeiro">AR</button>
+    </div>
+  </header>
+
+  <main class="arquivo">
+    <div class="barra-orelhas">
+      <div class="orelhas" id="orelhas" role="tablist" aria-label="Pastas abertas"></div>
+      <div class="orelha-nova">
+        <button id="abrir-pasta" aria-haspopup="true" aria-expanded="false" aria-controls="menu-pastas">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Abrir pasta
+        </button>
+        <ul class="menu" id="menu-pastas" hidden>
+          <li><button data-abrir="agenda"><span class="amostra-cor" style="--cor: var(--cor-agenda)"></span><span>Agenda<small>Eventos, aulas e reservas</small></span></button></li>
+          <li><button data-abrir="estoque"><span class="amostra-cor" style="--cor: var(--cor-estoque)"></span><span>Estoque<small>Materiais e movimentações</small></span></button></li>
+          <li><button data-abrir="demandas"><span class="amostra-cor" style="--cor: var(--cor-demandas)"></span><span>Demandas<small>Pedidos e acompanhamento</small></span></button></li>
+          <li class="so-gestor"><button data-abrir="cadastros"><span class="amostra-cor" style="--cor: var(--cor-cadastros)"></span><span>Cadastros<small>Usuários, espaços e equipamentos</small></span></button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pasta" id="pasta"></div>
+  </main>
+
+  <script src="js/icones.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/screens/painel.js"></script>
+  <script src="js/screens/agenda.js"></script>
+  <script src="js/screens/estoque.js"></script>
+  <script src="js/screens/demandas.js"></script>
+  <script src="js/screens/cadastros.js"></script>
+  <script src="js/screens/perfil.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/tabs.js"></script>
+</body>
+</html>

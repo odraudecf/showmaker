@@ -1,0 +1,69 @@
+/* ShowMaker — tokens de design
+   Metáfora: a mesa de MDF do LabMaker com um arquivo de pastas em cima. */
+
+:root {
+  /* Superfícies */
+  --mesa: #C9A77C;
+  --mesa-escura: #A8845A;
+  --papel: #FBFAF5;
+  --papel-sombra: #E9E5D8;
+  --manila: #E8C872;
+  --postit: #FFE36E;
+
+  /* Tinta */
+  --grafite: #2B2B2B;
+  --grafite-suave: #5B564D;
+  --tinta: #1F3A93;
+  --tinta-clara: #DCE3F5;
+  --pauta: #C7D5EC;
+  --margem: #E3908C;
+
+  /* Cores das pastas (orelhas) */
+  --cor-painel: #E8C872;
+  --cor-agenda: #7FB3D5;
+  --cor-estoque: #8DBF8B;
+  --cor-demandas: #E3B23C;
+  --cor-cadastros: #B7A6D6;
+  --cor-perfil: #E4A49B;
+
+  /* Carimbos */
+  --carimbo-vermelho: #B3261E;
+  --carimbo-verde: #2E6B3A;
+  --carimbo-azul: #1F3A93;
+  --carimbo-roxo: #5B3F8C;
+  --carimbo-ocre: #8A5A00;
+  --carimbo-cinza: #6B675F;
+
+  /* Tipografia */
+  --f-corpo: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mao: "Kalam", "Segoe Print", "Comic Sans MS", cursive;
+
+  /* Escala 1.25 */
+  --t-menor: 0.8rem;
+  --t-base: 1rem;
+  --t-1: 1.25rem;
+  --t-2: 1.563rem;
+  --t-3: 1.953rem;
+  --t-4: 2.441rem;
+
+  /* Espaçamento */
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-5: 1.5rem;
+  --e-6: 2rem;
+  --e-7: 3rem;
+
+  /* Pauta da caderneta */
+  --linha: 2rem;
+
+  /* Sombras de papel */
+  --sombra-folha: 0 1px 0 rgba(70, 45, 10, 0.12), 0 2px 5px rgba(70, 45, 10, 0.16);
+  --sombra-alta: 0 2px 0 rgba(70, 45, 10, 0.1), 0 10px 24px rgba(50, 30, 5, 0.28);
+
+  --raio-papel: 3px;
+  --raio-pasta: 10px;
+
+  --foco: 0 0 0 3px var(--papel), 0 0 0 5px var(--tinta);
+}
